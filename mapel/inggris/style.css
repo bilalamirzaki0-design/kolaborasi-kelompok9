@@ -1,0 +1,309 @@
+:root {
+    --color-ink: #243b53;
+    --color-blue: #3986c5;
+    --color-blue-dark: #28618f;
+    --color-mint: #e2f1fc;
+    --color-page: #f1f8fd;
+    --color-muted: #647d92;
+    --color-border: #d3e6f4;
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-down {
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0px 16px;
+    background: var(--color-page);
+    color: var(--color-ink);
+    overflow-x: clip;
+    line-height: 1.6;
+}
+
+.titles {
+    color: var(--color-blue-dark);
+    border-left: 4px solid var(--color-blue);
+    padding: 4px 0 4px 18px;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 12px;
+    background-color: #a9d8f44D;
+    animation: fade-up 650ms ease-out both;
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background-color: var(--color-white);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 18px rgba(36, 76, 110, 0.1);
+    animation: slide-down 600ms ease-out both;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-blue);
+}
+
+.hook {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    border-radius: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 1.05;
+    font-weight: 800;
+    background:
+        linear-gradient(rgba(26, 67, 102, 0.58), rgba(50, 106, 151, 0.42)),
+        url(../../assets/images/ukflag.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    animation: fade-up 800ms ease-out both;
+}
+
+.hook span {
+    color: #b8e3ff;
+}
+
+.hook p {
+    justify-self: center;
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 120%;
+    padding: 10px 50px;
+    background-color: rgba(0, 0, 0, 0.58);
+    transition: background-color 0.5s ease;
+}
+
+.explain summary {
+    justify-content: space-between;
+    background-color: white;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--color-violet-dark);
+    font-weight: 700;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3px;
+    box-shadow: 0 6px 20px rgba(76, 29, 149, 0.08);
+}
+
+.explain h2 {
+    text-align: center;
+}
+
+.explain-paragraph {
+    line-height: 150%;
+    font-weight: 500px;
+    justify-content: space-between;
+    background-color: #b8e3ff;
+    padding: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3px;
+    box-shadow: 0 6px 20px rgba(76, 29, 149, 0.08);
+}
+
+.explain p {
+    text-indent: 40px;
+}
+
+.explain {
+    max-width: 1080px;
+    margin: 14px auto 30px;
+    padding: 0 16px;
+}
+
+.explain summary {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    transition: color 250ms ease, background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+.explain summary:hover {
+    color: var(--color-blue-dark);
+    background-color: #f7fbff;
+    box-shadow: 0 8px 24px rgba(40, 97, 143, 0.14);
+    transform: translateY(-2px);
+}
+
+.explain summary::-webkit-details-marker {
+    display: none;
+}
+
+.explain summary::after {
+    content: "+";
+    color: var(--color-ink);
+    font-size: 24px;
+    line-height: 1;
+}
+
+.explain[open] summary {
+    border-radius: 12px 12px 0 0;
+}
+
+.explain[open] summary::after {
+    content: "−";
+}
+
+.explain {
+    animation: fade-up 700ms ease-out both;
+}
+
+.explain[open] .explain-paragraph {
+    animation: fade-up 450ms ease-out both;
+}
+
+/* footer */
+.footer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    border-radius: 0;
+    background: linear-gradient(135deg, #cce9fb, #a9d8f4);
+    color: #243b53;
+    text-align: center;
+    margin-top: 56px;
+    overflow: hidden;
+    animation: fade-up 700ms ease-out both;
+}
+
+.footer-content {
+    padding: 48px 24px 40px;
+}
+
+.footer-content h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.footer-content h2 span {
+    color: #28618f;
+}
+
+.footer-content p {
+    color: #426682;
+    max-width: 48ch;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+ 
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    color: #28618f;
+    font-size: 20px;
+    text-decoration: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(40, 97, 143, 0.55);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease, transform 250ms ease;
+}
+
+.footer-social a:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #28618f;
+    transform: translateY(-4px) scale(1.08);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(40, 97, 143, 0.2);
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #426682;
+    line-height: 1.5;
+}
+
+.nav .nav-link {
+    text-decoration: none;
+    color: var(--color-ink);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
